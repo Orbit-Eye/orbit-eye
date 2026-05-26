@@ -16,3 +16,46 @@ body {
   background-color: var(--color-primary);
   color: var(--color-text);
 }
+
+.header {
+  width: 100%;
+  padding: 20px 80px;
+  background-color: var(--color-secondary);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  color: var(--color-blue);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--color-blue);
+}
