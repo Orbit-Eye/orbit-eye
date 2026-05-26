@@ -59,3 +59,59 @@ body {
 .nav-links a:hover {
   color: var(--color-blue);
 }
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 150px 80px 80px;
+
+  gap: 50px;
+}
+
+.hero-content {
+  width: 50%;
+}
+
+.hero-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #d9d9d9;
+  margin-bottom: 30px;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: var(--color-blue);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero-button:hover {
+  transform: translateY(-5px);
+  opacity: 0.9s;
+}
+
+.hero-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+}
