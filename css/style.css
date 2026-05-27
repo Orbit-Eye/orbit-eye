@@ -201,3 +201,125 @@ body {
 
   border-radius: 12px;
 }
+
+.cards-section {
+  padding: 120px 80px;
+}
+
+.section-title {
+  text-align: center;
+
+  font-size: 3rem;
+
+  margin-bottom: 60px;
+
+  color: var(--color-blue);
+}
+
+.cards-container {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgba(15, 23, 42, 0.8);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 20px;
+
+  padding: 40px;
+
+  width: 350px;
+
+  transition: 0.3s;
+
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+
+  border-color: var(--color-blue);
+
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+
+  margin-bottom: 20px;
+
+  color: var(--color-light-blue);
+}
+
+.card p {
+  color: var(--color-gray);
+
+  line-height: 1.8;
+}
+
+.impact-section {
+  padding: 120px 80px;
+}
+
+.impact-container {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+}
+
+.impact-card {
+  width: 300px;
+
+  padding: 50px 30px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.9),
+    rgba(30, 41, 59, 0.7)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition: 0.3s;
+}
+
+.impact-card:hover {
+  transform: scale(1.05);
+
+  border-color: var(--color-blue);
+
+  box-shadow: 0 0 35px rgba(59, 130, 246, 0.3);
+}
+
+.impact-card h3 {
+  font-size: 4rem;
+
+  color: var(--color-blue);
+
+  margin-bottom: 20px;
+}
+
+.impact-card p {
+  color: var(--color-gray);
+
+  line-height: 1.7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
