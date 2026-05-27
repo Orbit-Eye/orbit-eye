@@ -3,7 +3,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,7 +15,7 @@
     />
 
     <!-- ARQUIVOS CSS -->
-    >
+
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
 
@@ -23,19 +23,24 @@
   </head>
 
   <body>
-    <header>
+    <header class="header">
       <nav class="navbar">
         <div class="logo">
           <h1>OrbitEye</h1>
         </div>
 
         <ul class="nav-links">
-          <li href="#problema">Problema</li>
-          <li href="#tecnologia">Tecnologia</li>
-          <li href="#objetivos">Objetivos</li>
-          <li href="#publico">Público</li>
-          <li href="#beneficios">Benefícios</li>
-          <li href="#aplicacao">Aplicação</li>
+          <li><a href="#problema">Problema</a></li>
+
+          <li><a href="#tecnologia">Tecnologia</a></li>
+
+          <li><a href="#objetivos">Objetivos</a></li>
+
+          <li><a href="#publico">Público</a></li>
+
+          <li><a href="#beneficios">Benefícios</a></li>
+
+          <li><a href="#aplicacao">Aplicação</a></li>
         </ul>
       </nav>
     </header>
@@ -60,7 +65,56 @@
       </div>
     </section>
 
-    <!-- CHAMANDO O ARQUIVO .JS -->>
+    <main>
+      <!-- PROBLEMA -->
+      <section id="problema" class="content-section">
+        <div class="section-text">
+          <h2>Problema</h2>
+
+          <p>
+            Queimadas demoram para ser identificadas, causando danos ambientais
+            e riscos para cidades e agricultores.
+          </p>
+        </div>
+
+        <div class="section-image">
+          <img src="./img/problema.png" alt="Imagem representando queimadas" />
+        </div>
+      </section>
+
+      <!-- TECNOLOGIA -->
+      <section id="tecnologia" class="content-section reverse">
+        <div class="section-image">
+          <img
+            src="./img/tecnologia.png"
+            alt="Imagem de satélites e tecnologia"
+          />
+        </div>
+
+        <div class="section-text">
+          <h2>Tecnologia</h2>
+
+          <p>
+            Utilizamos satélites, sensores orbitais e monitoramento inteligente
+            para detectar focos de calor em tempo real.
+          </p>
+        </div>
+      </section>
+
+      <!-- OBJETIVOS -->
+      <section id="objetivos" class="content-section"></section>
+
+      <!-- PÚBLICO -->
+      <section id="publico" class="content-section reverse"></section>
+
+      <!-- BENEFÍCIOS -->
+      <section id="beneficios" class="content-section"></section>
+
+      <!-- APLICAÇÃO -->
+      <section id="aplicacao" class="content-section reverse"></section>
+    </main>
+
+    <!-- CHAMANDO O ARQUIVO .JS -->
     <script src="./js/script.js"></script>
   </body>
 </html>
