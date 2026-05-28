@@ -46,17 +46,25 @@ const prevSlide = document.querySelector("#prevSlide");
 const dots = document.querySelectorAll(".dot");
 
 function updateSlide(index) {
-  slideImage.src = slides[index].image;
-  slideImage.alt = slides[index].title;
+  slideImage.style.opacity = "0";
+  slideImage.style.transform = "scale(1.03)";
 
-  slideTitle.textContent = slides[index].title;
-  slideDescription.textContent = slides[index].description;
+  setTimeout(() => {
+    slideImage.src = slides[index].image;
+    slideImage.alt = slides[index].title;
 
-  dots.forEach((dot) => {
-    dot.classList.remove("active-dot");
-  });
+    slideTitle.textContent = slides[index].title;
+    slideDescription.textContent = slides[index].description;
 
-  dots[index].classList.add("active-dot");
+    dots.forEach((dot) => {
+      dot.classList.remove("active-dot");
+    });
+
+    dots[index].classList.add("active-dot");
+
+    slideImage.style.opacity = "1";
+    slideImage.style.transform = "scale(1)";
+  }, 250);
 }
 
 function showNextSlide() {
