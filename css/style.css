@@ -17,15 +17,6 @@
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.45), 0 0 80px rgba(59, 130, 246, 0.08);
 }
 
-/* =========================================
-   RESET
-========================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -147,8 +138,10 @@ body::after {
 
   background: linear-gradient(to right, #ffffff, #60a5fa);
 
+  background-clip: text;
   -webkit-background-clip: text;
 
+  color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
