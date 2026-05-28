@@ -1,9 +1,6 @@
-/*
-ARQUIVO CRIADO PARA REMOVER AS CONFIGURAÇÕES PADRÕES DO NAVEGADOR
-*/
-
+/* RESET */
 * {
-  margin: 0; /*Remove as margens padrões do navegador*/
-  padding: 0; /*Remove os espaçamentos internos padrão do navegador*/
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
