@@ -987,6 +987,7 @@ body::after {
 /* =========================================
    SLIDESHOW
 ========================================= */
+
 .slideshow-section {
   padding: 120px 80px;
 }
@@ -1022,7 +1023,7 @@ body::after {
   display: block;
 
   transition:
-    0.5s ease,
+    opacity 0.5s ease,
     transform 0.5s ease;
 
   opacity: 1;
@@ -1127,6 +1128,8 @@ body::after {
   background: rgba(255, 255, 255, 0.25);
 
   transition: 0.3s;
+
+  cursor: pointer;
 }
 
 .active-dot {
@@ -1135,4 +1138,24 @@ body::after {
   border-radius: 999px;
 
   background: var(--primary-light);
+}
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(60px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+
+  transform: translateY(0);
 }

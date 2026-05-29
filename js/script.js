@@ -1,3 +1,7 @@
+// =========================================
+// HEADER SCROLL EFFECT
+// =========================================
+
 const header = document.querySelector(".header");
 
 window.addEventListener("scroll", () => {
@@ -14,7 +18,10 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// =========================================
 // SLIDESHOW
+// =========================================
+
 const slides = [
   {
     image: "./img/satelite.jpg",
@@ -22,12 +29,14 @@ const slides = [
     description:
       "Satélites analisam grandes áreas em tempo real para identificar riscos ambientais.",
   },
+
   {
     image: "./img/problema.jpg",
     title: "Detecção de Focos de Calor",
     description:
       "O sistema identifica regiões com risco elevado antes que o incêndio se espalhe.",
   },
+
   {
     image: "./img/tecnologia.jpg",
     title: "Análise Inteligente de Dados",
@@ -41,11 +50,15 @@ let currentSlide = 0;
 const slideImage = document.querySelector("#slideImage");
 const slideTitle = document.querySelector("#slideTitle");
 const slideDescription = document.querySelector("#slideDescription");
+
 const nextSlide = document.querySelector("#nextSlide");
 const prevSlide = document.querySelector("#prevSlide");
+
 const dots = document.querySelectorAll(".dot");
 
 function updateSlide(index) {
+  if (!slideImage) return;
+
   slideImage.style.opacity = "0";
   slideImage.style.transform = "scale(1.03)";
 
@@ -60,7 +73,9 @@ function updateSlide(index) {
       dot.classList.remove("active-dot");
     });
 
-    dots[index].classList.add("active-dot");
+    if (dots[index]) {
+      dots[index].classList.add("active-dot");
+    }
 
     slideImage.style.opacity = "1";
     slideImage.style.transform = "scale(1)";
@@ -87,8 +102,13 @@ function showPrevSlide() {
   updateSlide(currentSlide);
 }
 
-nextSlide.addEventListener("click", showNextSlide);
-prevSlide.addEventListener("click", showPrevSlide);
+if (nextSlide) {
+  nextSlide.addEventListener("click", showNextSlide);
+}
+
+if (prevSlide) {
+  prevSlide.addEventListener("click", showPrevSlide);
+}
 
 dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
@@ -97,4 +117,27 @@ dots.forEach((dot, index) => {
   });
 });
 
+// autoplay
 setInterval(showNextSlide, 5000);
+
+// =========================================
+// SCROLL REVEAL
+// =========================================
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach((element) => {
+    const revealTop = element.getBoundingClientRect().top;
+
+    if (revealTop < windowHeight - 100) {
+      element.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
