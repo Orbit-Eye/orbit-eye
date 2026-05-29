@@ -1159,3 +1159,59 @@ body::after {
 
   transform: translateY(0);
 }
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.menu-toggle {
+  display: none;
+
+  font-size: 2rem;
+
+  color: white;
+
+  cursor: pointer;
+
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+
+    top: 90px;
+    right: -100%;
+
+    width: 280px;
+    height: calc(100vh - 90px);
+
+    background: rgba(2, 6, 23, 0.96);
+
+    backdrop-filter: blur(20px);
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    transition: 0.4s ease;
+
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+}
