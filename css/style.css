@@ -555,7 +555,7 @@ body::after {
 .section-tag {
   display: inline-block;
 
-  padding: 10px 18px;
+  padding: 14px 24px;
 
   border-radius: 999px;
 
@@ -563,11 +563,15 @@ body::after {
 
   color: var(--primary-light);
 
-  font-size: 0.8rem;
+  font-size: 1rem;
 
-  letter-spacing: 1px;
+  font-weight: 600;
 
-  margin-bottom: 24px;
+  letter-spacing: 1.5px;
+
+  margin-bottom: 32px;
+
+  text-transform: uppercase;
 }
 
 .section-content h2,
@@ -1371,5 +1375,118 @@ body::after {
 
   .next-btn {
     right: 12px;
+  }
+}
+
+/* =========================================
+   THEME SWITCHER
+========================================= */
+
+.theme-section {
+  padding: 120px 80px;
+}
+
+.theme-options {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 22px;
+
+  flex-wrap: wrap;
+}
+
+.theme-button {
+  padding: 18px 34px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(10, 18, 35, 0.72);
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(16px);
+
+  transition: 0.35s;
+}
+
+.theme-button:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--primary-light);
+
+  box-shadow: var(--shadow);
+}
+
+.active-theme {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+
+  border-color: transparent;
+
+  color: white;
+
+  box-shadow:
+    0 15px 40px color-mix(in srgb, var(--primary) 35%, transparent),
+    0 0 30px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+/* TEMAS */
+
+body.theme-blue {
+  --primary: #3b82f6;
+  --primary-light: #60a5fa;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(59, 130, 246, 0.18),
+      transparent 25%
+    ),
+    linear-gradient(to bottom, #020617, #050d1d, #020617);
+}
+
+body.theme-green {
+  --primary: #22c55e;
+  --primary-light: #86efac;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(34, 197, 94, 0.18),
+      transparent 25%
+    ),
+    linear-gradient(to bottom, #02130a, #052016, #020617);
+}
+
+body.theme-red {
+  --primary: #ef4444;
+  --primary-light: #f87171;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(239, 68, 68, 0.2),
+      transparent 25%
+    ),
+    linear-gradient(to bottom, #140404, #220808, #020617);
+}
+
+@media (max-width: 768px) {
+  .theme-section {
+    padding: 90px 24px;
+  }
+
+  .theme-button {
+    width: 100%;
+
+    max-width: 320px;
   }
 }

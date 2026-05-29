@@ -173,3 +173,24 @@ if (menuToggle && navLinks) {
     });
   });
 }
+
+// =========================================
+// THEME SWITCHER
+// =========================================
+
+const themeButtons = document.querySelectorAll(".theme-button");
+
+themeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedTheme = button.getAttribute("data-theme");
+
+    document.body.classList.remove("theme-blue", "theme-green", "theme-red");
+    document.body.classList.add(`theme-${selectedTheme}`);
+
+    themeButtons.forEach((btn) => {
+      btn.classList.remove("active-theme");
+    });
+
+    button.classList.add("active-theme");
+  });
+});
