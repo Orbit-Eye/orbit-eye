@@ -1167,32 +1167,52 @@ body::after {
 .menu-toggle {
   display: none;
 
-  font-size: 2rem;
+  font-size: 2.2rem;
 
   color: white;
 
   cursor: pointer;
 
   z-index: 1001;
+
+  user-select: none;
 }
 
 @media (max-width: 768px) {
+  .header {
+    padding: 18px 24px;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .logo h1 {
+    font-size: 2.2rem;
+  }
+
   .menu-toggle {
     display: block;
   }
 
+  .nav-button {
+    display: none;
+  }
+
   .nav-links {
+    display: flex;
+
     position: fixed;
 
-    top: 90px;
+    top: 78px;
     right: -100%;
 
-    width: 280px;
-    height: calc(100vh - 90px);
+    width: 100%;
+    height: calc(100vh - 78px);
 
-    background: rgba(2, 6, 23, 0.96);
+    background: rgba(2, 6, 23, 0.98);
 
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(22px);
 
     flex-direction: column;
 
@@ -1200,11 +1220,11 @@ body::after {
 
     justify-content: center;
 
-    gap: 35px;
+    gap: 34px;
 
-    transition: 0.4s ease;
+    transition: right 0.4s ease;
 
-    z-index: 999;
+    z-index: 998;
   }
 
   .nav-links.active {
@@ -1212,6 +1232,144 @@ body::after {
   }
 
   .nav-links a {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+
+    color: white;
+  }
+
+  .hero,
+  .section,
+  .cards-section,
+  .impact-section,
+  .cta-section,
+  .slideshow-section {
+    padding: 120px 24px 80px;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .hero-content,
+  .section-content,
+  .section-image {
+    width: 100%;
+  }
+
+  .hero-content h2,
+  .section-content h2,
+  .section-header h2,
+  .cta-box h2 {
+    font-size: 3rem;
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+  }
+
+  .hero-content p,
+  .section-content p,
+  .cta-box p {
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+
+  .hero-bg-image {
+    width: 560px;
+
+    opacity: 0.16;
+
+    right: -150px;
+  }
+
+  .hero-buttons,
+  .hero-stats,
+  .tech-cards,
+  .floating-ui {
+    flex-direction: column;
+  }
+
+  .hero-buttons {
+    align-items: center;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+
+    max-width: 320px;
+
+    text-align: center;
+  }
+
+  .stat,
+  .floating-card,
+  .tech-card {
+    width: 100%;
+  }
+
+  .floating-ui {
+    position: relative;
+
+    right: auto;
+    bottom: auto;
+
+    margin-top: 50px;
+  }
+
+  .section,
+  .reverse {
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 50px;
+  }
+
+  .tech-cards {
+    gap: 20px;
+  }
+
+  .cards-grid,
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-box {
+    padding: 55px 28px;
+  }
+
+  .slide {
+    height: 360px;
+  }
+
+  .slide-info {
+    left: 24px;
+    right: 24px;
+    bottom: 28px;
+  }
+
+  .slide-info h3 {
+    font-size: 1.7rem;
+  }
+
+  .slide-info p {
+    font-size: 0.95rem;
+  }
+
+  .slide-btn {
+    width: 44px;
+    height: 44px;
+
+    font-size: 2rem;
+  }
+
+  .prev-btn {
+    left: 12px;
+  }
+
+  .next-btn {
+    right: 12px;
   }
 }
