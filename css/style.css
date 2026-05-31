@@ -1711,3 +1711,128 @@ body.theme-red {
     font-size: 1.5rem;
   }
 }
+
+/* =========================================
+   FIX SAFARI / IPHONE
+========================================= */
+
+@media (max-width: 768px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .hero::before,
+  .hero::after {
+    opacity: 0.4;
+    filter: none;
+  }
+
+  .hero-bg-image {
+    opacity: 0.08 !important;
+    filter: none !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .header {
+    backdrop-filter: blur(10px);
+  }
+
+  .floating-card,
+  .card,
+  .impact-card,
+  .tech-card,
+  .stat {
+    backdrop-filter: none;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   MOBILE FIX DEFINITIVO
+========================================= */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #020617 !important;
+  }
+
+  body::before,
+  body::after,
+  .bg-grid {
+    display: none !important;
+  }
+
+  .hero,
+  .theme-section,
+  .slideshow-section,
+  .section,
+  .cards-section,
+  .impact-section,
+  .cta-section,
+  .quiz-section {
+    background: linear-gradient(
+      to bottom,
+      #020617,
+      #07111f,
+      #020617
+    ) !important;
+  }
+
+  .hero-bg-image {
+    display: none !important;
+  }
+
+  .hero::before,
+  .hero::after {
+    display: none !important;
+  }
+
+  .hero-content,
+  .section-header,
+  .theme-section,
+  .slideshow-section {
+    color: #f8fafc !important;
+  }
+
+  .hero-content h2,
+  .section-header h2,
+  .theme-section h2 {
+    color: #f8fafc !important;
+  }
+
+  .hero-content p,
+  .section-header p,
+  .theme-section p {
+    color: #cbd5e1 !important;
+  }
+
+  .header {
+    background: rgba(2, 6, 23, 0.98) !important;
+    backdrop-filter: none !important;
+  }
+
+  .floating-card,
+  .card,
+  .impact-card,
+  .tech-card,
+  .stat,
+  .quiz-container,
+  .cta-box,
+  .slideshow-container {
+    backdrop-filter: none !important;
+  }
+}
