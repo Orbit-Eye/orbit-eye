@@ -41,12 +41,14 @@
           <li><a href="#aplicacao">Aplicação</a></li>
         </ul>
 
+        <div class="menu-toggle" id="menuToggle">☰</div>
+
         <a href="#aplicacao" class="nav-button"> Solicitar demonstração </a>
       </nav>
     </header>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero reveal">
       <!-- IMAGEM COMO FUNDO -->
       <img
         src="./img/satelite.jpg"
@@ -96,7 +98,7 @@
       </div>
 
       <!-- FLOATING UI -->
-      <div class="floating-ui">
+      <div class="floating-ui reveal">
         <div class="floating-card">
           <strong>IA analisando dados orbitais</strong>
 
@@ -115,10 +117,77 @@
       </div>
     </section>
 
+    <!-- THEME SWITCHER -->
+    <section class="theme-section reveal" id="temas">
+      <div class="section-header reveal">
+        <span class="section-tag">PERSONALIZAÇÃO VISUAL</span>
+
+        <h2>Escolha o modo de visualização do OrbitEye.</h2>
+
+        <p>
+          Altere o tema da interface para adaptar a experiência visual ao
+          ambiente de monitoramento.
+        </p>
+      </div>
+
+      <div class="theme-options">
+        <button class="theme-button active-theme" data-theme="blue">
+          Azul Orbital
+        </button>
+
+        <button class="theme-button" data-theme="green">Verde Ambiental</button>
+
+        <button class="theme-button" data-theme="red">Alerta Vermelho</button>
+      </div>
+    </section>
+
+    <!-- SLIDESHOW -->
+    <section class="slideshow-section reveal" id="slideshow">
+      <div class="section-header">
+        <span class="section-tag">MONITORAMENTO VISUAL</span>
+
+        <h2>Dados orbitais transformados em visão estratégica.</h2>
+
+        <p>
+          Acompanhe diferentes cenários monitorados pelo OrbitEye usando imagens
+          relacionadas à tecnologia espacial e prevenção ambiental.
+        </p>
+      </div>
+
+      <div class="slideshow-container">
+        <button class="slide-btn prev-btn" id="prevSlide">‹</button>
+
+        <div class="slide">
+          <img
+            id="slideImage"
+            src="./img/satelite.jpg"
+            alt="Satélite monitorando a Terra"
+          />
+
+          <div class="slide-info">
+            <h3 id="slideTitle">Monitoramento Orbital</h3>
+
+            <p id="slideDescription">
+              Satélites analisam grandes áreas em tempo real para identificar
+              riscos ambientais.
+            </p>
+          </div>
+        </div>
+
+        <button class="slide-btn next-btn" id="nextSlide">›</button>
+      </div>
+
+      <div class="slide-dots">
+        <span class="dot active-dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
     <!-- MAIN -->
     <main>
       <!-- PROBLEMA -->
-      <section id="problema" class="section">
+      <section id="problema" class="section reveal">
         <div class="section-image">
           <img src="./img/problema.jpg" alt="Queimadas ambientais" />
         </div>
@@ -144,7 +213,7 @@
       </section>
 
       <!-- TECNOLOGIA -->
-      <section id="tecnologia" class="section reverse">
+      <section id="tecnologia" class="section reverse reveal">
         <div class="section-image">
           <img src="./img/tecnologia.jpg" alt="Tecnologia orbital" />
         </div>
@@ -159,7 +228,7 @@
             detectar padrões críticos de temperatura em tempo real.
           </p>
 
-          <div class="tech-cards">
+          <div class="tech-cards reveal">
             <div class="tech-card">
               <h3>IA Preditiva</h3>
 
@@ -182,14 +251,14 @@
       </section>
 
       <!-- OBJETIVOS -->
-      <section id="objetivos" class="cards-section">
+      <section id="objetivos" class="cards-section reveal">
         <div class="section-header">
           <span class="section-tag">OBJETIVOS</span>
 
           <h2>Construído para antecipar riscos ambientais.</h2>
         </div>
 
-        <div class="cards-grid">
+        <div class="cards-grid reveal">
           <div class="card">
             <h3>Detecção Inteligente</h3>
 
@@ -217,14 +286,14 @@
       </section>
 
       <!-- IMPACTO -->
-      <section id="impacto" class="impact-section">
+      <section id="impacto" class="impact-section reveal">
         <div class="section-header">
           <span class="section-tag">IMPACTO</span>
 
           <h2>Dados transformados em ação preventiva.</h2>
         </div>
 
-        <div class="impact-grid">
+        <div class="impact-grid reveal">
           <div class="impact-card">
             <h3>98%</h3>
 
@@ -246,22 +315,94 @@
       </section>
 
       <!-- CTA -->
-      <section id="aplicacao" class="cta-section">
-        <div class="cta-box">
+      <!-- CTA / FORMULÁRIO -->
+      <section id="aplicacao" class="cta-section reveal">
+        <div class="cta-box reveal">
           <span class="section-tag">APLICAÇÃO REAL</span>
 
           <h2>Tecnologia estratégica para proteger ecossistemas e cidades.</h2>
 
           <p>
-            O OrbitEye oferece inteligência orbital para governos, órgãos
-            ambientais e equipes de emergência atuarem antes que incêndios saiam
-            do controle.
+            Solicite uma demonstração do OrbitEye e veja como a análise orbital
+            pode apoiar governos, órgãos ambientais e equipes de emergência.
           </p>
 
-          <a href="#" class="primary-button"> Solicitar apresentação </a>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Nome completo</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Ex: Guilherme Gimenez"
+              />
+              <span class="error-message" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail institucional</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Ex: contato@empresa.com"
+              />
+              <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="organization">Organização</label>
+              <input
+                type="text"
+                id="organization"
+                placeholder="Ex: Defesa Civil, Prefeitura, ONG Ambiental"
+              />
+              <span class="error-message" id="organizationError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="region">Região de interesse</label>
+              <input
+                type="text"
+                id="region"
+                placeholder="Ex: Amazônia Legal, Cerrado, Interior de SP"
+              />
+              <span class="error-message" id="regionError"></span>
+            </div>
+
+            <button type="submit" class="primary-button form-button">
+              Enviar solicitação
+            </button>
+
+            <p class="form-success" id="formSuccess"></p>
+          </form>
         </div>
       </section>
     </main>
+
+    <!-- QUIZ -->
+    <section class="quiz-section reveal">
+      <div class="section-header">
+        <span class="section-tag">QUIZ INTERATIVO</span>
+
+        <h2>Teste seus conhecimentos sobre o OrbitEye.</h2>
+
+        <p>
+          Responda às perguntas e descubra o quanto você aprendeu sobre
+          monitoramento orbital e prevenção ambiental.
+        </p>
+      </div>
+
+      <div class="quiz-container">
+        <h3 id="question">Pergunta aqui</h3>
+
+        <div class="answers" id="answers"></div>
+
+        <button class="primary-button quiz-button" id="nextQuestion">
+          Próxima pergunta
+        </button>
+
+        <div class="quiz-result" id="quizResult"></div>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -277,5 +418,11 @@
         © 2026 OrbitEye — Inteligência espacial para preservação ambiental.
       </p>
     </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+      ↑
+    </button>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
