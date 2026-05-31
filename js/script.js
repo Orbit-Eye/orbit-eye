@@ -194,3 +194,71 @@ themeButtons.forEach((button) => {
     button.classList.add("active-theme");
   });
 });
+
+// ==================================
+// FORM VALIDATION
+// ==================================
+
+const contactForm = document.querySelector("#contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = document.querySelector("#name");
+    const email = document.querySelector("#email");
+    const organization = document.querySelector("#organization");
+    const region = document.querySelector("#region");
+
+    const nameError = document.querySelector("#nameError");
+    const emailError = document.querySelector("#emailError");
+    const organizationError = document.querySelector("#organizationError");
+    const regionError = document.querySelector("#regionError");
+    const formSuccess = document.querySelector("#formSuccess");
+
+    let isValid = true;
+
+    nameError.textContent = "";
+    emailError.textContent = "";
+    organizationError.textContent = "";
+    regionError.textContent = "";
+    formSuccess.textContent = "";
+
+    const cleanName = name.value.trim();
+
+    if (cleanName === "") {
+      nameError.textContent = "Informe seu nome completo!";
+      isValid = false;
+    } else if (cleanName.length < 3) {
+      nameError.textContent = "O nome deve possuir pelo menos 3 caracteres!";
+      isValid = false;
+    } else if (!cleanName.includes(" ")) {
+      nameError.textContent = "Digite nome e sobrenome!";
+      isValid = false;
+    }
+
+    if (email.value.trim() === "") {
+      emailError.textContent = "Informe seu e-mail!";
+      isValid = false;
+    } else if (!email.value.includes("@") || !email.value.includes(".")) {
+      emailError.textContent = "Informe um e-mail válido!";
+      isValid = false;
+    }
+
+    if (organization.value.trim() === "") {
+      organizationError.textContent = "Informe a organização!";
+      isValid = false;
+    }
+
+    if (region.value.trim() === "") {
+      regionError.textContent = "Informe a região de interesse!";
+      isValid = false;
+    }
+
+    if (isValid) {
+      formSuccess.textContent =
+        "Solicitação enviada com sucesso! A equipe OrbitEye entrará em contato!";
+      contactForm.reset();
+    }
+  });
+}
