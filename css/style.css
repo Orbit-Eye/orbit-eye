@@ -1840,3 +1840,57 @@ body {
 .hero-content h2 {
   line-height: 1;
 }
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.back-to-top {
+  position: fixed;
+
+  right: 24px;
+  bottom: 24px;
+
+  width: 58px;
+  height: 58px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+
+  color: white;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999999;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(20px);
+
+  transition: all 0.35s ease;
+
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-6px) scale(1.05);
+
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
+}
