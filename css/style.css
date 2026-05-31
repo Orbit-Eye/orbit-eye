@@ -1836,3 +1836,7 @@ body {
     backdrop-filter: none !important;
   }
 }
+
+.hero-content h2 {
+  line-height: 1;
+}
