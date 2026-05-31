@@ -262,3 +262,201 @@ if (contactForm) {
     }
   });
 }
+
+// ======================================
+// QUIZ
+// ======================================
+
+const quizQuestions = [
+  {
+    question: "Qual é o principal objetivo do OrbitEye?",
+    answers: [
+      "Criar redes sociais ambientais",
+      "Detectar queimadas e apoiar respostas preventivas",
+      "Controlar veículos autônomos",
+      "Gerenciar energia elétrica urbana",
+    ],
+    correct: 1,
+  },
+  {
+    question: "Que tipo de tecnologia o OrbitEye utiliza para monitoramento?",
+    answers: [
+      "Dados orbitais e satélites",
+      "Cabos submarinos",
+      "Modelos 3D",
+      "Realidade aumentada",
+    ],
+    correct: 0,
+  },
+  {
+    question: "O OrbitEye identifica focos de incêndio em:",
+    answers: [
+      "Somente após denúncias",
+      "Uma ver por mês",
+      "Tempo real",
+      "Apenas durante a noite",
+    ],
+    correct: 2,
+  },
+  {
+    question:
+      "Qual recurso inteligente é citado no site como parte da solução?",
+    answers: [
+      "Streaming",
+      "Criptomoedas",
+      "Inteligência Artificial",
+      "Reconhecimento tecnológico",
+    ],
+    correct: 2,
+  },
+  {
+    question: "O que o OrbitEye busca reduzir?",
+    answers: [
+      "A quantidade de erupções vulcânicas",
+      "A utilização de internet",
+      "A quantidade de satélites no espaço",
+      "O tempo de resposta contra incidentes",
+    ],
+    correct: 3,
+  },
+  {
+    question: "Quem pode se beneficiar do OrbitEye?",
+    answers: [
+      "Empresas de transportes marítimos",
+      "Governos, orgãos ambientais e equipes de emergência",
+      "Empresas de controles ambientais",
+      "Lojas virtuais",
+    ],
+    correct: 1,
+  },
+  {
+    question: "O que os sensores térmicos ajudam a detectar?",
+    answers: [
+      "Ocorrências de terremotos",
+      "Possíveis sinais de tsunami",
+      "Falhas em sinais de celulares",
+      "Focos térmicos e padrões críticos de temperatura",
+    ],
+    correct: 3,
+  },
+  {
+    question: "Qual é uma das métricas apresentadas na página inicial?",
+    answers: [
+      "97% de cobertura orbital",
+      "150 horas de funcionamento semanal",
+      "98% de precisão térmica",
+      "1000 usuários cadastrados",
+    ],
+    correct: 2,
+  },
+  {
+    question: "O slideshow do site apresenta imagens relacionadas a:",
+    answers: [
+      "Monitoramento visual, tecnologia espacial e prevenção ambiental",
+      "Moda, entretenimento e música",
+      "Comércio eletrônico e pagamentos",
+      "Jogos digitais e realidade virtual",
+    ],
+    correct: 0,
+  },
+  {
+    question: "Qual é a proposta do OrbitEye para o meio ambiente?",
+    answers: [
+      "Substituir satélites por inteligência artificial",
+      "Apoiar ações preventivas para proteger ecossitemas e cidades",
+      "Criar mapas para o turismo global",
+      "Diminuir o consumo de recursos naturais",
+    ],
+    correct: 1,
+  },
+];
+
+const questionElement = document.querySelector("#question");
+const answersElement = document.querySelector("#answers");
+const nextQuestionButton = document.querySelector("#nextQuestion");
+const quizResult = document.querySelector("#quizResult");
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function loadQuestion() {
+  if (!questionElement || !answersElement || !nextQuestionButton) return;
+
+  answered = false;
+
+  const currentQuiz = quizQuestions[currentQuestion];
+
+  questionElement.textContent = currentQuiz.question;
+  answersElement.innerHTML = "";
+  quizResult.textContent = "";
+
+  currentQuiz.answers.forEach((answer, index) => {
+    const button = document.createElement("button");
+
+    button.classList.add("answer-btn");
+    button.textContent = answer;
+
+    button.addEventListener("click", () => selectAnswer(button, index));
+
+    answersElement.appendChild(button);
+  });
+
+  nextQuestionButton.textContent =
+    currentQuestion === quizQuestions.length - 1
+      ? "Finalizar quiz"
+      : "Próxima pergunta";
+}
+
+function selectAnswer(button, index) {
+  if (answered) return;
+
+  answered = true;
+
+  const correctAnswer = quizQuestions[currentQuestion].correct;
+  const buttons = document.querySelectorAll(".answer-btn");
+
+  buttons.forEach((btn, btnIndex) => {
+    btn.disabled = true;
+
+    if (btnIndex === correctAnswer) {
+      btn.classList.add("answer-correct");
+    }
+
+    if (btnIndex === index && btnIndex !== correctAnswer) {
+      btn.classList.add("answer-wrong");
+    }
+  });
+
+  if (index === correctAnswer) {
+    score++;
+  }
+}
+
+if (nextQuestionButton) {
+  nextQuestionButton.addEventListener("click", () => {
+    if (!answered) {
+      quizResult.textContent = "Selecione uma alternativa antes de continuar.";
+      return;
+    }
+
+    currentQuestion++;
+
+    if (currentQuestion < quizQuestions.length) {
+      loadQuestion();
+    } else {
+      showResult();
+    }
+  });
+}
+
+function showResult() {
+  questionElement.textContent = "Quiz finalizado!";
+  answersElement.innerHTML = "";
+
+  nextQuestionButton.style.display = "none";
+
+  quizResult.textContent = `Você acertou ${score} de ${quizQuestions.length} perguntas!`;
+}
+
+loadQuestion();
